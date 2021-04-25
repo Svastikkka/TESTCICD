@@ -16,8 +16,16 @@ jobs:
       - run: echo "hello world" # run the `echo` command
       - run: npm install # run the `echo` command
       - run:
+          name: Run on fail status
           command: |
-            curl -H 'Content-Type: application/json' -d '{"text": "STAGE BUILD"}' https://usthaan715.webhook.office.com/webhookb2/216c2a55-0aa5-4121-b3c2-df0afe704437@cdfad6cb-99df-4451-ac6b-8cb2eca5058c/IncomingWebhook/54dae55e2c9d4729819d10e95cfe152a/039b64f3-af48-4160-bc30-f202ba06c0b1
+            curl -H 'Content-Type: application/json' -d '{"text": "STAGE BUILD , STATUS FAILED"}' https://usthaan715.webhook.office.com/webhookb2/216c2a55-0aa5-4121-b3c2-df0afe704437@cdfad6cb-99df-4451-ac6b-8cb2eca5058c/IncomingWebhook/54dae55e2c9d4729819d10e95cfe152a/039b64f3-af48-4160-bc30-f202ba06c0b1
+          when: on_fail
+      - run:
+          name: Run on success status
+          command: |
+            curl -H 'Content-Type: application/json' -d '{"text": "STAGE BUILD, , STATUS SUCCESS"}' https://usthaan715.webhook.office.com/webhookb2/216c2a55-0aa5-4121-b3c2-df0afe704437@cdfad6cb-99df-4451-ac6b-8cb2eca5058c/IncomingWebhook/54dae55e2c9d4729819d10e95cfe152a/039b64f3-af48-4160-bc30-f202ba06c0b1
+          when: on_success
+
   test:
     docker:
       - image: cimg/node:14.10.1 # the primary container, where your job's commands are run
