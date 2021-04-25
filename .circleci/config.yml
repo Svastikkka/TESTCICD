@@ -1,12 +1,19 @@
 version: 2.1
+orb-version: 1.0.1
 orbs:
-  ms-teams: cloudradar-monitoring/ms-teams@1.0.0
+  status_to_ms_teams: bluemarblepayroll/status_to_ms_teams_pure_bash@1.0.1
 jobs:
   build:
-    executor: docker
+    docker:
+      - image: cimg/node:14.10.1 # the primary container, where your job's commands are run
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
-      - checkout
-      - run: command/to/run/your/tests
+      - checkout # check out the code in the project directory
+      - run: echo "hello world" # run the `echo` command
+      - run: npm install # run the `echo` command
+      - run: npm test # run the `echo` command
       - ms-teams/report:
-          only_on_fail: true
           webhook_url: https://usthaan715.webhook.office.com/webhookb2/216c2a55-0aa5-4121-b3c2-df0afe704437@cdfad6cb-99df-4451-ac6b-8cb2eca5058c/IncomingWebhook/54dae55e2c9d4729819d10e95cfe152a/039b64f3-af48-4160-bc30-f202ba06c0b1
+
