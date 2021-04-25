@@ -1,5 +1,7 @@
 version: 2.1
 orb-version: 1.0.1
+description: An orb for notifiying Microsoft Teams of build statuses implemented in pure Bash.
+
 orbs:
   status_to_ms_teams: bluemarblepayroll/status_to_ms_teams_pure_bash@1.0.1
 jobs:
