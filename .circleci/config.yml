@@ -11,4 +11,10 @@ jobs:
       - run: echo "hello world" # run the `echo` command
       - run: npm install # run the `echo` command
       - run: npm test # run the `echo` command
+orbs:
+  slack: circleci/slack@4.4.0
+workflows:
+  your-workflow:
+    jobs:
+      - build
 
