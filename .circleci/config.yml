@@ -22,8 +22,6 @@ jobs:
         auth:
           username: mydockerhub-user
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
-    requires:
-        - build
     steps:
       - checkout
       - run: npm install # run the `echo` command
@@ -36,3 +34,5 @@ workflows:
     jobs:
       - build
       - test
+          requires:
+              - build
