@@ -1,0 +1,27 @@
+{
+    "@type": "MessageCard",
+    "@context": "http://schema.org/extensions",
+    "themeColor": "__theme_color__",
+    "summary": "CircleCI Build Notification",
+    "sections": [
+      {
+        "activityTitle": "__build_status__: ${CIRCLE_USERNAME}'s [$CIRCLE_PROJECT_REPONAME $CIRCLE_JOB #${CIRCLE_BUILD_NUM}]($CIRCLE_BUILD_URL)",
+        "activityImage": "$AVATAR_URL",
+        "facts": [
+          {
+            "name": "Branch",
+            "value": "$CIRCLE_BRANCH"
+          },
+          {
+            "name": "Commit Message",
+            "value": "`cat /tmp/last_git_msg`"
+          },
+          {
+            "name": "Commit",
+            "value": "$COMMIT_LINK"
+          }
+        ],
+        "markdown": true
+      }
+    ]
+  }
