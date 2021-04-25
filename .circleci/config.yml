@@ -2,13 +2,17 @@ workflows:
   version: 2
   build-test-and-deploy:
     jobs:
-      - build
-      - test1:
-          requires:
-            - build
-      - test2:
-          requires:
-            - test1
-      - deploy:
-          requires:
-            - test2
+      - build:
+          docker:
+            - image: cimg/node:14.10.1 # the primary container, where your job's commands are run
+              auth:
+                username: mydockerhub-user
+                password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+          run: echo "HELLO"
+      - test:
+          docker:
+            - image: cimg/node:14.10.1 # the primary container, where your job's commands are run
+              auth:
+                username: mydockerhub-user
+                password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+          run: echo "HELLO"
