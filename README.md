@@ -26,3 +26,6 @@ It triggers whenever we push something to the main branch
 Note:- For each stage we provicde Teams notification so we can get the progress report (success/failure) of each stage.
 # Demo
 [YOUTUBE](https://www.youtube.com/watch?v=O55pEot1Y68)
+# Dependencies
+1. MOCHA for creating sample testcase
+2. CIRCLI for pipeline
