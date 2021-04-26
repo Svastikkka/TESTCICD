@@ -1,5 +1,4 @@
 # TESTCICD
-
 # Use Case
 1. Lead time: Early feedback and build/test automation help decrease the time it takes to go from code committed to code successfully running in production.
 
