@@ -28,4 +28,9 @@ Note:- For each stage we provicde Teams notification so we can get the progress 
 [YOUTUBE](https://www.youtube.com/watch?v=O55pEot1Y68)
 # Dependencies
 1. MOCHA for creating sample testcase
-2. CIRCLI for pipeline
+2. CIRCE CI for creating pipeline
+3. bluemarblepayroll/status_to_ms_teams_pure_bash@1.0.1 for sending notification.
+
+# How to run 
+1. npm install
+2. npm test
