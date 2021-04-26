@@ -19,5 +19,10 @@ It triggers whenever we push something to the main branch
 
 # Architecture diagram 
 ![TESTCICD](./media/TESTCICD.png)
+
+1. Build stage:- It is an optional stage where we can provide some extra requirments before Test stage.
+2. Test stage :- In this stage we install the test dependencies and check all the test-case are pass or not.
+
+Note:- For each stage we provicde Teams notification so we can get the progress report (success/failure) of each stage.
 # Demo
 [YOUTUBE]()
