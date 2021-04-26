@@ -32,5 +32,5 @@ Note:- For each stage we provicde Teams notification so we can get the progress 
 3. bluemarblepayroll/status_to_ms_teams_pure_bash@1.0.1 for sending notification.
 
 # How to run 
-1. npm install
-2. npm test
+1. Install dependencies :- `npm install`
+2. Run test :- `npm test`
